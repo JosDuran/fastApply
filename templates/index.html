@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>fastApplyJob</title>
+</head>
+<body style="font-family: Arial; margin: 40px;">
+    <h1>AutoeMailSender</h1>
+
+    <form action="/previsualizar" method="post">
+        <label><b>Texto de la convocatoria:</b></label><br>
+        <textarea name="texto_convocatoria" rows="10" cols="80" placeholder="Pega aquí la convocatoria...">{{ texto_convocatoria or '' }}</textarea><br><br>
+
+        <label><b>Cargo (manual):</b></label><br>
+        <input type="text" name="cargo_manual" value="{{ cargo_manual or '' }}" placeholder="Ej: Analista de Datos" required><br><br>
+
+        <button type="submit">Previsualizar y guardar</button>
+    </form>
+
+    {% if preview %}
+        <hr>
+        <h2>Previsualización del correo</h2>
+        <p><b>Para:</b> {{ preview.para }}</p>
+        <p><b>Asunto:</b> {{ preview.asunto }}</p>
+        <p><b>Mensaje:</b></p>
+        <pre style="background:#f0f0f0; padding:10px; white-space: pre-wrap;">{{ preview.mensaje }}</pre>
+        <p><b>Adjunto:</b> {{ preview.adjunto }}</p>
+
+        <form action="/enviar" method="post">
+            <input type="hidden" name="texto_convocatoria" value="{{ texto_convocatoria }}">
+            <input type="hidden" name="cargo_manual" value="{{ cargo_manual }}">
+            <button type="submit">Enviar correo</button>
+        </form>
+    {% endif %}
+</body>
+</html>

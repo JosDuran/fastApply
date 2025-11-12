@@ -1,0 +1,4 @@
+GMAIL_APP_PASSWORD='************'
+GMAIL_USER='********@gmail.com'
+AUTOEMAIL_MENSAJE="Buen día, me interesa el reto, adjunto mi hoja de vida.\n\nAtt. ********\nTeléfono: **********\n\n---\nCorreo autogenerado con IA © fastApplyJob"
+PERFILES_JSON='{"ciencia de datos": {"descripcion": "Perfil Ciencia de Datos", "archivo": "/cvpath/DS.pdf"}, "backend": {"descripcion": "Perfil Backend", "archivo": "/cvpath/BE.pdf"}}'
