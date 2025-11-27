@@ -49,6 +49,12 @@ Here is an example:
 }
 ```
 
+## Run application
+
+```bash
+uvicorn main:app
+``
+
 ## Main Features
 
 - Automatic processing of job posting text.  
